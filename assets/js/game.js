@@ -4,7 +4,7 @@ var selectableWords =           // Word list
         "jakuu",
         "naboo",
         "coruscant",
-        "camino",
+        "kamino",
         "corellia",
         "degobah",
         "mustafar",
