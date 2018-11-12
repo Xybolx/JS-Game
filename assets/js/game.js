@@ -1,16 +1,16 @@
 var selectableWords =           // Word list
     [
-        "csharp",
-        "cplusplus",
-        "rubyonrails",
-        "python",
-        "javascript",
-        "ansic",
-        "cobol",
-        "fortran",
-        "visualbasic",
-        "compiler",
-        "algorithm",
+        "tattooine",
+        "jakuu",
+        "naboo",
+        "coruscant",
+        "camino",
+        "corellia",
+        "degobah",
+        "mustafar",
+        "yavin",
+        "krayt",
+        "hoth",
     ];
 
 const maxTries = 10;            // Maximum number of tries player has
