@@ -73,7 +73,7 @@ function updateDisplay() {
 
 // Updates the image depending on how many guesses
 function updateHangmanImage() {
-    document.getElementById("hangmanImage").src = "assets/images/" + (maxTries - remainingGuesses) + ".png";
+    document.getElementById("hangmanImage").src = "assets/imgs/deathstar.png" + (maxTries - remainingGuesses) + ".png";
 };
 
 
