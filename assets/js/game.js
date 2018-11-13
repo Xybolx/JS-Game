@@ -20,8 +20,9 @@ var currentWordIndex;           // Index of the current word in the array
 var guessingWord = [];          // This will be the word we actually build to match the current word
 var remainingGuesses = 0;       // How many tries the player has left
 var gameStarted = false;        // Flag to tell if the game has started
-var hasFinished = false;        // Flag for 'press any key to try again'     
-var wins = 0;                   // How many wins has the player racked up
+var hasFinished = false;                          // Flag for 'press any key to try again'     
+var wins = 0;
+// How many wins has the player racked up
 
  
  
@@ -41,7 +42,7 @@ function resetGame() {
     guessingWord = [];
 
     // Make sure the hangman image is cleared
-    document.getElementById("hangmanImage").src = "";
+    document.getElementById("hangmanImage").src ="";
 
     // Build the guessing word and clear it out
     for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
@@ -70,6 +71,7 @@ function updateDisplay() {
     if(remainingGuesses <= 0) {
         document.getElementById("gameover-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
+        $('audio#loseSound')[0].play()
         hasFinished = true;
     }
 };
@@ -144,6 +146,11 @@ function checkWin() {
         document.getElementById("youwin-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText= "display: block";
         wins++;
+        $('audio#winSound')[0].play()
         hasFinished = true;
+        
+
+
+
     }
 };
