@@ -1,17 +1,17 @@
 var selectableWords =           // Word list
-    [
-        "tattooine",
-        "jakuu",
-        "naboo",
-        "coruscant",
-        "kamino",
-        "corellia",
-        "degobah",
-        "mustafar",
-        "yavin",
-        "krayt",
-        "hoth",
-    ];
+[
+    "tattooine",
+    "jakuu",
+    "naboo",
+    "coruscant",
+    "kamino",
+    "corellia",
+    "degobah",
+    "mustafar",
+    "yavin",
+    "krayt",
+    "hoth",
+];
 
 const maxTries = 10;            // Maximum number of tries player has
 
@@ -24,8 +24,8 @@ var hasFinished = false;                          // Flag for 'press any key to 
 var wins = 0;
 // How many wins has the player racked up
 
- 
- 
+
+
 
 
 
@@ -33,17 +33,18 @@ var wins = 0;
 function resetGame() {
     remainingGuesses = maxTries;
     gameStarted = false;
-
+    
+    
     // Use Math.floor to round the random number down to the nearest whole.
     currentWordIndex = Math.floor(Math.random() * (selectableWords.length));
-
+    
     // Clear out arrays
     guessedLetters = [];
     guessingWord = [];
-
+    
     // Make sure the hangman image is cleared
     document.getElementById("hangmanImage").src ="";
-
+    
     // Build the guessing word and clear it out
     for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
         guessingWord.push("_");
@@ -52,7 +53,7 @@ function resetGame() {
     document.getElementById("pressKeyTryAgain").style.cssText= "display: none";
     document.getElementById("gameover-image").style.cssText = "display: none";
     document.getElementById("youwin-image").style.cssText = "display: none";
-
+    
     // Show display
     updateDisplay();
 };
@@ -60,7 +61,7 @@ function resetGame() {
 
 //  Updates the display on the HTML Page
 function updateDisplay() {
-
+    
     document.getElementById("totalWins").innerText = wins;
     document.getElementById("currentWord").innerText = "";
     for (var i = 0; i < guessingWord.length; i++) {
@@ -102,7 +103,7 @@ function makeGuess(letter) {
         if (!gameStarted) {
             gameStarted = true;
         }
-
+        
         // Make sure we didn't use this letter yet
         if (guessedLetters.indexOf(letter) === -1) {
             guessedLetters.push(letter);
@@ -120,14 +121,14 @@ function makeGuess(letter) {
 function evaluateGuess(letter) {
     // Array to store positions of letters in string
     var positions = [];
-
+    
     // Loop through word finding all instances of guessed letter, store the indicies in an array.
     for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
         if(selectableWords[currentWordIndex][i] === letter) {
             positions.push(i);
         }
     }
-
+    
     // if there are no indicies, remove a guess and update the hangman image
     if (positions.length <= 0) {
         remainingGuesses--;
@@ -149,8 +150,8 @@ function checkWin() {
         $('audio#winSound')[0].play()
         hasFinished = true;
         
-
-
-
-    }
+        
+        
+        
+    }$('audio#bGmusic')[0].play()
 };
