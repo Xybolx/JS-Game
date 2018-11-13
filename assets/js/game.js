@@ -1,7 +1,7 @@
 var selectableWords =           // Word list
 [
     "tattooine",
-    "jakuu",
+    "jakku",
     "naboo",
     "coruscant",
     "kamino",
