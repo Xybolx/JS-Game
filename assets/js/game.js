@@ -23,6 +23,10 @@ var gameStarted = false;        // Flag to tell if the game has started
 var hasFinished = false;        // Flag for 'press any key to try again'     
 var wins = 0;                   // How many wins has the player racked up
 
+ 
+ 
+
+
 
 // Reset our game-level variables
 function resetGame() {
