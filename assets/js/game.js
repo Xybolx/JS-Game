@@ -13,7 +13,7 @@ var selectableWords =           // Word list
     "hoth",
 ];
 
-const maxTries = 10;            // Maximum number of tries player has
+const maxTries = 5;            // Maximum number of tries player has
 
 var guessedLetters = [];        // Stores the letters the user guessed
 var currentWordIndex;           // Index of the current word in the array
