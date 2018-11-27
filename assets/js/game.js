@@ -72,9 +72,11 @@ function updateDisplay() {
     if(remainingGuesses <= 0) {
         document.getElementById("gameover-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
+        document.getElementById("currentWord").innerText = selectableWords[currentWordIndex];
         $('audio#loseSound')[0].play()
         hasFinished = true;
     }
+
 };
 
 
