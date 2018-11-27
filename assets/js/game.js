@@ -50,6 +50,8 @@ function resetGame() {
         guessingWord.push("_");
     }
     // Hide game over and win images/text
+    document.getElementById("winText").style.cssText= "display: none";
+    document.getElementById("loseText").style.cssText= "display: none";
     document.getElementById("pressKeyTryAgain").style.cssText= "display: none";
     document.getElementById("gameover-image").style.cssText = "display: none";
     document.getElementById("youwin-image").style.cssText = "display: none";
@@ -70,6 +72,9 @@ function updateDisplay() {
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
     if(remainingGuesses <= 0) {
+        document.getElementById("loseText").style.cssText= "display: block";
+        $('#loseText').animate({fontSize: '8em'}, "slow");
+        $('#loseText').animate({fontSize: '0em'}, "slow");
         document.getElementById("gameover-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
         document.getElementById("currentWord").innerText = selectableWords[currentWordIndex];
@@ -146,6 +151,9 @@ function evaluateGuess(letter) {
 
 function checkWin() {
     if(guessingWord.indexOf("_") === -1) {
+        document.getElementById("winText").style.cssText = "display: block";
+        $('#winText').animate({fontSize: '8em'}, "slow");
+        $('#winText').animate({fontSize: '0em'}, "slow");
         document.getElementById("youwin-image").style.cssText = "display: block";
         document.getElementById("pressKeyTryAgain").style.cssText= "display: block";
         wins++;
