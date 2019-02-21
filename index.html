@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Star Wars Planets Hangman</title>
     <link rel="shortcut icon" href="assets/imgs/favicon (2).ico" type="image/x-icon">
@@ -36,16 +36,18 @@
     
     <body>
         
-                
+        <div class="jumbotron jumbotron-fluid" style="background: transparent">        
         <div class="container">
-            <img id="title-image" src="assets/imgs/Star_Wars_header_v4.jpg" alt="Hangman Title Image" height="150px">
-            <p>Planets Hangman</p> 
+            <div class="jumbotron jumbotron-fluid text-center" style="background: transparent">
+            <img class="img-fluid" id="title-image" src="assets/imgs/Star_Wars_header_v4.jpg" alt="Hangman Title Image" height="150px">
+            <p>Planets Hangman</p>
+            </div> 
             <div class="row">
                 <div class="col-md-6 gameplay-column">
                     <h4 id="winText">GOT ONE!!!</h4>
                     <h4 id="loseText">PATHETIC!!!</h4>
-                    <img id="youwin-image" src="assets/imgs/starwars_cocky_2.jpg" alt="Winning Image" width="300px" />
-                    <img id="gameover-image" src="assets/imgs/starwars_anger.jpg" alt="Game Over Image" width="300px" />
+                    <img class="img-fluid" id="youwin-image" src="assets/imgs/starwars_cocky_2.jpg" alt="Winning Image" width="300px" height="300px" />
+                    <img class="img-fluid" id="gameover-image" src="assets/imgs/starwars_anger.jpg" alt="Game Over Image" width="300px" height="300px" />
                     <h2 id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
                     <img id="hangmanImage" src="" alt="" />
                 </div>
@@ -62,6 +64,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <div class="footer">
                 <p>©2018-Xybolx/™Lucasfilm LTD</p>
