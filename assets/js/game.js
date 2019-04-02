@@ -1,5 +1,5 @@
 
-var selectableWords =           // Word list
+const selectableWords =           // Word list
 [
     "tattooine",
     "jakku",
@@ -14,16 +14,15 @@ var selectableWords =           // Word list
     "hoth",
 ];
 
-const maxTries = 5;            // Maximum number of tries player has
+const maxTries = 5;             // Maximum number of tries player has
 
-var guessedLetters = [];        // Stores the letters the user guessed
-var currentWordIndex;           // Index of the current word in the array
-var guessingWord = [];          // This will be the word we actually build to match the current word
-var remainingGuesses = 0;       // How many tries the player has left
-var gameStarted = false;        // Flag to tell if the game has started
-var hasFinished = false;                          // Flag for 'press any key to try again'     
-var wins = 0;
-// How many wins has the player racked up
+let guessedLetters = [];        // Stores the letters the user guessed
+let currentWordIndex;           // Index of the current word in the array
+let guessingWord = [];          // This will be the word we actually build to match the current word
+let remainingGuesses = 0;     // How many tries the player has left
+let gameStarted = false;        // Flag to tell if the game has started
+let hasFinished = false;        // Flag for 'press any key to try again'     
+let wins = 0;                   // How many wins has the player racked up
 
 
 
@@ -45,7 +44,7 @@ function resetGame() {
     document.getElementById("hangmanImage").src ="";
     
     // Build the guessing word and clear it out
-    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+    for (let i = 0; i < selectableWords[currentWordIndex].length; i++) {
         guessingWord.push("_");
     }
     // Hide game over and win images/text
@@ -65,7 +64,7 @@ function updateDisplay() {
     
     document.getElementById("totalWins").innerText = wins;
     document.getElementById("currentWord").innerText = "";
-    for (var i = 0; i < guessingWord.length; i++) {
+    for (let i = 0; i < guessingWord.length; i++) {
         document.getElementById("currentWord").innerText += guessingWord[i];
     }
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
@@ -90,7 +89,7 @@ function updateHangmanImage() {
 };
 
 
-document.onkeydown = function(event) {
+document.onkeydown = event => {
     // If we finished a game, dump one keystroke and reset.
     if(hasFinished) {
         resetGame();
@@ -126,10 +125,10 @@ function makeGuess(letter) {
 // appearance in the string and replaces them in the guess word.
 function evaluateGuess(letter) {
     // Array to store positions of letters in string
-    var positions = [];
+    let positions = [];
     
     // Loop through word finding all instances of guessed letter, store the indicies in an array.
-    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+    for (let i = 0; i < selectableWords[currentWordIndex].length; i++) {
         if(selectableWords[currentWordIndex][i] === letter) {
             positions.push(i);
         }
@@ -141,7 +140,7 @@ function evaluateGuess(letter) {
         updateHangmanImage();
     } else {
         // Loop through all the indicies and replace the '_' with a letter.
-        for(var i = 0; i < positions.length; i++) {
+        for(let i = 0; i < positions.length; i++) {
             guessingWord[positions[i]] = letter;
         }
     }
